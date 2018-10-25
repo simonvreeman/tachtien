@@ -45,6 +45,15 @@
         -webkit-text-fill-color: transparent;
         animation: AnimationName 1s alternate ease-in-out infinite;
       }
+      img {
+        height: 270px;
+        width: 480px;
+      }
+      img:hover {
+        background-image: url('ditisdesteven.gif');
+        height: 270px;
+        width: 480px;
+      }
       @keyframes AnimationName { 
         0% {
           background-position: 0% 100%;
@@ -83,7 +92,8 @@
     <meta name="robots" content="index, follow">
   </head>
   <body>
-    <img alt="Tachtien" src="tachtien.gif">
-    <h1><span>Tachtien</span> kopstootjes met de <a href="https://www.cityguys.nl/" title="De Cityguys" rel="noopener" target="_blank" onclick="trackOutboundLink('https://www.cityguys.nl/'); return false;">Cityguys</a></p>
+    <img alt="Tachtien" src="tachtien.gif" onmouseover="this.src='ditisdesteven.gif';" onmouseout="this.src='tachtien.gif';" />
+>
+    <h1><span>Tachtien</span> kopstootjes met de <a href="https://www.cityguys.nl/" title="De Cityguys" rel="noopener" target="_blank" rel="noopener" onclick="trackOutboundLink('https://www.cityguys.nl/'); return false;">Cityguys</a></p>
   </body>
 </html>
