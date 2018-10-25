@@ -27,7 +27,16 @@
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
       }
-      h1:hover {
+      a { 
+        color: rgba(0, 0, 0, .75);
+        text-decoration: none;
+        background: -webkit-gradient(linear, left top, right top, from(red), color-stop(yellow), color-stop(lime), color-stop(aqua), color-stop(blue), to(fuchsia)) 0 100%/100% 2px no-repeat;
+        background: -webkit-linear-gradient(left, red, yellow, lime, aqua, blue, fuchsia) 0 100%/100% 2px no-repeat;
+        background: -o-linear-gradient(left, red, yellow, lime, aqua, blue, fuchsia) 0 100%/100% 2px no-repeat;
+        background: linear-gradient(to right, red, yellow, lime, aqua, blue, fuchsia) 0 100%/100% 2px no-repeat;
+        text-decoration: none;
+     }
+      span {
         font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", cursive, sans-serif;
         font-weight: 700;
         background: linear-gradient(to right, red, yellow, lime, aqua, blue, fuchsia);
@@ -39,18 +48,16 @@
       @keyframes AnimationName { 
         0% {
           background-position: 0% 100%;
-          transform: skewX(5deg) skewY(5deg) scale(0.9);
         }
         100% {
           background-position: 100% 0%;
-          transform: skewX(-5deg) skewY(-5deg) scale(1.1);
         }
       }
       @media (prefers-color-scheme: dark) {
         body {
           background-color: rgba(0, 0, 0, .75);
         }
-        h1 {
+        h1, a {
           color: rgba(255, 255, 255, 1);
         }
       }
@@ -77,6 +84,6 @@
   </head>
   <body>
     <img alt="Tachtien" src="tachtien.gif">
-    <h1>Tachtien</h1>
+    <h1><span>Tachtien</span> kopstootjes met de <a href="https://www.cityguys.nl/" title="De Cityguys" rel="noopener" target="_blank" onclick="trackOutboundLink('https://www.cityguys.nl/'); return false;">Cityguys</a></p>
   </body>
 </html>
