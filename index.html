@@ -80,33 +80,51 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
-          "@id": "https://tachtien.nl/#organization",
-          "name": "Tachtien",
-          "url": "https://tachtien.nl/"
-        },
-        {
           "@type": "WebSite",
           "@id": "https://tachtien.nl/#website",
           "url": "https://tachtien.nl/",
           "name": "Tachtien",
-          "publisher": {
-            "@id": "https://tachtien.nl/#organization"
+          "author": {
+            "@id": "https://tachtien.nl/#person"
           }
         },
         {
-          "@type": ["WebPage"],
+          "@type": "WebPage",
           "@id": "https://tachtien.nl/#webpage",
           "url": "https://tachtien.nl/",
           "inLanguage": "nl",
           "name": "De definitie en herkomst van het woord Tachtien",
+          "description": "Uitgebreide toelichting over de betekenis van het prachtige woord Tachtien. En er zijn wel Tachtien redenen waarom het een prachtig woord is.",
           "isPartOf": {
             "@id": "https://tachtien.nl/#website"
           },
-          "about": {
-            "@id": "https://tachtien.nl/#organization"
+          "author": {
+            "@id": "https://tachtien.nl/#person"
           },
-          "description": "Uitgebreide toelichting over de betekenis van het prachtige woord Tachtien. En er zijn wel Tachtien redenen waarom het een prachtig woord is."
+          "primaryImageOfPage": {
+            "@id": "https://tachtien.nl/#image"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://tachtien.nl/#person",
+          "name": "Simon Vreeman",
+          "email": "simon@vreeman.com",
+          "url": "https://vreeman.com/",
+          "sameAs": [
+            "https://www.facebook.com/simonvreeman",
+            "https://www.linkedin.com/in/simonvreeman/",
+            "https://twitter.com/vreeman",
+            "https://www.instagram.com/simonvreeman/",
+            "https://www.crunchbase.com/person/simon-vreeman",
+            "https://g.co/kg/m/010rn7wd"
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://tachtien.nl/#image",
+          "contentUrl": "https://tachtien.nl/tachtien.jpg",
+          "name": "Tachtien"
         }
       ]
     }
