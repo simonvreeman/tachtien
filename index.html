@@ -66,13 +66,21 @@
         }
       }
     </style>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-LEW9DW1CN3" async></script>
     <script>
-      window.ga=function(){ga.q.push(arguments)},ga.q=[],ga.l=+new Date;
-      ga("create","UA-2826482-27","auto",{"sampleRate":100,"siteSpeedSampleRate":100}),
-      ga("set",{"transport":"beacon","anonymizeIp":true,"forceSSL":true,"displayFeaturesTask":null,"allowAdFeatures":false,"allowAdPersonalizationSignals":false});
-      ga("send","pageview");
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LEW9DW1CN3', {
+        'link_attribution': true,
+        'transport_type': 'beacon',
+        'anonymize_ip': true,
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false,
+        'allowAdPersonalizationSignals': false
+      });
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" fetchpriority="high" importance="high" async></script>
     <link rel="canonical" href="https://tachtien.nl/">
     <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <meta name="description" content="Een uitgebreid eerbetoon en toelichting over de betekenis van het woord Tachtien. Er zijn wel Tachtien redenen waarom het een prachtig woord is.">
