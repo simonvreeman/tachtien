@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 124">
+  <title>tachtien</title>
+  <style>
+    .ink { fill: none; stroke: #000; stroke-width: 9.5; }
+    .bar, .word { fill: #000; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #fff; }
+      .bar, .word { fill: #fff; }
+    }
+  </style>
+  <defs>
+    <clipPath id="above"><polygon points="0,0 100,0 100,26 0,66"/></clipPath>
+    <clipPath id="below"><polygon points="0,66 100,26 100,124 0,124"/></clipPath>
+    <mask id="cut">
+      <rect width="100" height="124" fill="#fff"/>
+      <line x1="0" y1="66" x2="100" y2="26" stroke="#000" stroke-width="4"/>
+    </mask>
+  </defs>
+  <g mask="url(#cut)">
+    <!-- 80 (tachtig) above the slash -->
+    <g clip-path="url(#above)">
+      <ellipse class="ink" cx="31" cy="32" rx="10" ry="11"/>
+      <ellipse class="ink" cx="31" cy="62.5" rx="12" ry="14.75"/>
+      <ellipse class="ink" cx="69" cy="49" rx="12" ry="28.25"/>
+    </g>
+    <!-- 18 (achttien) below the slash -->
+    <g clip-path="url(#below)">
+      <rect class="bar" x="26.5" y="16" width="10" height="66"/>
+      <ellipse class="ink" cx="69" cy="32" rx="10" ry="11"/>
+      <ellipse class="ink" cx="69" cy="62.5" rx="12" ry="14.75"/>
+    </g>
+  </g>
+  <text class="word" x="50" y="112" text-anchor="middle" textLength="72" lengthAdjust="spacingAndGlyphs" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="700">tachtien</text>
+</svg>
