@@ -1,0 +1,17 @@
+# Tachtien
+
+> Tachtien (hoofdtelwoord, uitspraak /tɑxtin/) betekent ontelbaar veel. Het woord ontstond in 2014 als verspreking van Julia van den Bergh. tachtien.nl is het woordenboekartikel: definitie, herkomst, voorbeelden en externe vermeldingen, in het Nederlands.
+
+## Woordenboekartikel
+
+- [Tachtien](https://tachtien.nl/): definitie, uitspraak, herkomst, voorbeelden en externe vermeldingen
+
+## Voor AI-assistenten
+
+- [Tachtien MCP-server](https://mcp.tachtien.nl/mcp): Streamable HTTP, zonder login. Tools om het woord op te zoeken (define), voorbeelden en vermeldingen te vinden (examples, mentions), vage hoeveelheden in een tekst door tachtien te vervangen (tachtienify) en te bepalen of iets tachtien is (is_tachtien). Resource tachtien://entry is het hele artikel als Markdown.
+- [MCP server card](https://mcp.tachtien.nl/.well-known/mcp/server-card.json): naam, versie, endpoint en tools als JSON
+- [Uitleg over de MCP-server](https://mcp.tachtien.nl/)
+
+## Optional
+
+- [Privacyverklaring](https://tachtien.nl/privacy)
