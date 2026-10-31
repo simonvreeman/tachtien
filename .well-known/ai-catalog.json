@@ -1,0 +1,39 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Tachtien",
+    "identifier": "tachtien.nl",
+    "documentationUrl": "https://mcp.tachtien.nl/",
+    "logoUrl": "https://tachtien.nl/apple-touch-icon.png"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:tachtien.nl:mcp:tachtien",
+      "displayName": "Tachtien MCP server",
+      "description": "Read-only MCP server for the Dutch word tachtien (ontelbaar veel): define, examples, mentions, tachtienify and is_tachtien, plus the whole entry as a Markdown resource.",
+      "mediaType": "application/mcp-server-card+json",
+      "type": "application/mcp-server-card+json",
+      "url": "https://mcp.tachtien.nl/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "what does the Dutch word tachtien mean",
+        "wat betekent tachtien",
+        "is 18 biertjes tachtien",
+        "rewrite 'heel veel bier' with tachtien"
+      ],
+      "tags": ["mcp", "dictionary", "dutch"]
+    },
+    {
+      "identifier": "urn:air:tachtien.nl:skill:tachtien",
+      "displayName": "Tachtien agent skill",
+      "description": "Instructions for agents on using the word tachtien and connecting to the Tachtien MCP server.",
+      "mediaType": "text/markdown",
+      "type": "text/markdown",
+      "url": "https://tachtien.nl/.well-known/agent-skills/tachtien/SKILL.md",
+      "representativeQueries": [
+        "how do I use the tachtien MCP server",
+        "where does the word tachtien come from"
+      ],
+      "tags": ["agent-skill", "dutch"]
+    }
+  ]
+}

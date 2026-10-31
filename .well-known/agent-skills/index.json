@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "tachtien",
+      "type": "skill-md",
+      "description": "Look up and use the Dutch word tachtien (ontelbaar veel) through the public Tachtien MCP server at https://mcp.tachtien.nl/mcp.",
+      "url": "https://tachtien.nl/.well-known/agent-skills/tachtien/SKILL.md",
+      "digest": "sha256:72ea840b939ef333539191950e1f51823bd68f4e6dd87256f8e4cf89eb4ab1d7"
+    }
+  ]
+}
