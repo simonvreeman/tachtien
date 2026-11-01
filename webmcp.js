@@ -123,18 +123,19 @@
     }
   ];
 
-  // registerTool() is async, so register one at a time and warn per tool
-  // instead of leaving an unhandled rejection.
-  (async function () {
-    for (var i = 0; i < tools.length; i++) {
-      var tool = tools[i];
-      tool.annotations = { readOnlyHint: true };
-      tool.execute = callServer.bind(null, tool.name);
-      try {
-        await mc.registerTool(tool);
-      } catch (e) {
-        console.warn("[webmcp] registration failed for " + tool.name + ":", e);
-      }
+  // Start every registration at once, so an agent that reads the tool list
+  // right after load sees all five. registerTool() may throw or reject; warn
+  // per tool instead of leaving an unhandled rejection.
+  tools.forEach(function (tool) {
+    tool.annotations = { readOnlyHint: true };
+    tool.execute = callServer.bind(null, tool.name);
+    function warn(e) {
+      console.warn("[webmcp] registration failed for " + tool.name + ":", e);
     }
-  })();
+    try {
+      Promise.resolve(mc.registerTool(tool)).catch(warn);
+    } catch (e) {
+      warn(e);
+    }
+  });
 })();
