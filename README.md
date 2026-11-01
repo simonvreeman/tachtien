@@ -8,6 +8,8 @@ The definition and origin of the Dutch word *tachtien*: ontelbaar veel (uncounta
 - **MCP server:** `https://mcp.tachtien.nl/mcp`, read-only, no login. Source: [simonvreeman/tachtien-mcp](https://github.com/simonvreeman/tachtien-mcp).
 - **WebMCP:** `webmcp.js` registers the same five tools in browsers that support `document.modelContext`, and forwards each call to the MCP server.
 - **Discovery:** `/llms.txt`, `/.well-known/api-catalog`, `/.well-known/ai-catalog.json`, `/.well-known/agent-skills/`, and `/.well-known/mcp/server-card.json` (a redirect to the MCP server's card), all announced in the `Link` header in `_headers`.
+- **Personal Agent Protocol:** `/.well-known/poppy.json` declares the website only (`web: {}`).
+- **No OAuth:** the MCP server is public and needs no login, so there is no OAuth metadata or `auth.md`.
 - **robots.txt:** Content Signals `search=yes, ai-input=yes, ai-train=yes`.
 
 ## Keep in sync
