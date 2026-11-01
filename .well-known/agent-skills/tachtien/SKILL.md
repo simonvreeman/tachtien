@@ -31,9 +31,11 @@ The server card is at https://mcp.tachtien.nl/.well-known/mcp/server-card.json.
 | `define` | get syllables, part of speech, IPA, definition and origin |
 | `examples` | get example dialogues; pass `random: true` for one |
 | `mentions` | list external mentions; filter with `source`: `twitter`, `press` or `cityguys` |
-| `tachtienify` | rewrite vague large amounts in a Dutch or English text as tachtien |
-| `is_tachtien` | judge whether an amount counts as tachtien, with a reason in Dutch |
+| `tachtienify` | rewrite vague large amounts and large estimates (`ongeveer honderd`, `100+`) in a Dutch or English text as tachtien |
+| `is_tachtien` | judge whether an amount counts as tachtien, with a reason in Dutch; estimates of 50 or more do |
 
 Resource `tachtien://entry` is the whole entry as Markdown. Content is in Dutch, and every tool also returns `structuredContent`.
+
+Prompts `uitleg` (explain the word, `taal: English` for English), `herschrijf` (rewrite a `tekst` with tachtien) and `zin` (write a new example, optionally about an `onderwerp`) show up as commands in MCP clients.
 
 In a browser that supports WebMCP, https://tachtien.nl/ registers the same five tools.

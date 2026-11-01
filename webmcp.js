@@ -80,7 +80,7 @@
     },
     {
       "name": "tachtienify",
-      "description": "Rewrite a text so that vague large amounts in Dutch or English ('heel veel', 'honderden', 'a lot of', 'countless', ...) become 'tachtien'. Exact numbers are left alone, because they were counted. Returns the new text and the number of replacements.",
+      "description": "Rewrite a text so that vague large amounts in Dutch or English ('heel veel', 'honderden', 'a lot of', 'countless', ...) and large estimates ('ongeveer honderd', '~200', '100+') become 'tachtien'. Exact numbers, small estimates and years are left alone. Returns the new text, the number of replacements and each replaced phrase with its index in the input.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -98,7 +98,7 @@
     },
     {
       "name": "is_tachtien",
-      "description": "Judge whether an amount counts as 'tachtien' (uncountably many) and give a tongue-in-cheek reason in Dutch. Exact numbers never do (18 is achttien, 80 is tachtig, also inside a phrase like '18 biertjes'); vague amounts like 'heel veel' or 'geen idee' do, unless negated ('niet heel veel').",
+      "description": "Judge whether an amount counts as 'tachtien' (uncountably many) and give a tongue-in-cheek reason in Dutch. Exact numbers never do (18 is achttien, 80 is tachtig, also inside a phrase like '18 biertjes'). Vague amounts like 'heel veel' or 'geen idee' do, and so do estimates of 50 or more, lower bounds included ('ongeveer honderd', 'meer dan 50', '100+'), because nobody counted; negation ('niet heel veel') makes either false.",
       "inputSchema": {
         "type": "object",
         "properties": {

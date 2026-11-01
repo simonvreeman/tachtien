@@ -8,7 +8,7 @@
 
 ## Voor AI-assistenten
 
-- [Tachtien MCP-server](https://mcp.tachtien.nl/mcp): Streamable HTTP, zonder login. Tools om het woord op te zoeken (define), voorbeelden en vermeldingen te vinden (examples, mentions), vage hoeveelheden in een tekst door tachtien te vervangen (tachtienify) en te bepalen of iets tachtien is (is_tachtien). Resource tachtien://entry is het hele artikel als Markdown.
+- [Tachtien MCP-server](https://mcp.tachtien.nl/mcp): Streamable HTTP, zonder login. Tools om het woord op te zoeken (define), voorbeelden en vermeldingen te vinden (examples, mentions), vage hoeveelheden en grote schattingen in een tekst door tachtien te vervangen (tachtienify) en te bepalen of iets tachtien is (is_tachtien). Prompts om het woord uit te leggen (uitleg), een tekst te herschrijven (herschrijf) en een nieuwe voorbeeldzin te verzinnen (zin). Resource tachtien://entry is het hele artikel als Markdown.
 - [MCP server card](https://mcp.tachtien.nl/.well-known/mcp/server-card.json): naam, versie, endpoint en tools als JSON
 - [Uitleg over de MCP-server](https://mcp.tachtien.nl/)
 - [Agent skill](https://tachtien.nl/.well-known/agent-skills/tachtien/SKILL.md): hoe een agent het woord en de MCP-server gebruikt
