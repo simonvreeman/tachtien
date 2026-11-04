@@ -1,4 +1,4 @@
-Contact: mailto:simon@vreeman.com
+Contact: https://vreeman.com/
 Expires: 2027-10-31T00:00:00.000Z
 Preferred-Languages: nl, en
 Canonical: https://tachtien.nl/.well-known/security.txt
