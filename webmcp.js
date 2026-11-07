@@ -17,8 +17,31 @@
     return { error: message, code: code, retryable: retryable };
   }
 
+  // Turn the response body (JSON or SSE) into the structured result or a
+  // structured error. A body the server should never send is a
+  // PROTOCOL_ERROR: retrying will not fix it.
+  function readResult(text) {
+    var message;
+    try {
+      var data = text.split("\n").filter(function (l) { return l.indexOf("data:") === 0; })[0];
+      message = JSON.parse(data ? data.slice(5) : text);
+    } catch (e) {
+      return toolError("PROTOCOL_ERROR", "Unreadable response from " + ENDPOINT + ": " + e.message, false);
+    }
+    if (message && message.error) return toolError("RPC_ERROR", String(message.error.message), false);
+    var result = message && message.result;
+    if (!result) return toolError("PROTOCOL_ERROR", "Response from " + ENDPOINT + " has no result", false);
+    if (result.isError) {
+      var first = result.content && result.content[0];
+      return toolError("TOOL_ERROR", first && first.text ? first.text : "Tool error from " + ENDPOINT, false);
+    }
+    if (!result.structuredContent) return toolError("PROTOCOL_ERROR", "Response from " + ENDPOINT + " has no structuredContent", false);
+    return result.structuredContent;
+  }
+
   // One tools/call to the server; resolves the structured result or a
-  // structured error, never rejects.
+  // structured error, never rejects. Only a failed fetch or reading the
+  // body is a NETWORK_ERROR.
   function callServer(name, args) {
     return fetch(ENDPOINT, {
       method: "POST",
@@ -26,13 +49,7 @@
       body: JSON.stringify({ jsonrpc: "2.0", id: ++nextId, method: "tools/call", params: { name: name, arguments: args || {} } })
     }).then(function (res) {
       if (!res.ok) return toolError("HTTP_ERROR", "HTTP " + res.status + " from " + ENDPOINT, res.status >= 500);
-      return res.text().then(function (text) {
-        var data = text.split("\n").filter(function (l) { return l.indexOf("data:") === 0; })[0];
-        var message = JSON.parse(data ? data.slice(5) : text);
-        if (message.error) return toolError("RPC_ERROR", message.error.message, false);
-        if (message.result.isError) return toolError("TOOL_ERROR", message.result.content[0].text, false);
-        return message.result.structuredContent;
-      });
+      return res.text().then(readResult);
     }).catch(function (e) {
       return toolError("NETWORK_ERROR", "Could not reach " + ENDPOINT + ": " + e.message, true);
     });
